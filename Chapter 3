@@ -1,0 +1,71 @@
+#Exercise 3.1:
+
+
+def right_justify(s):
+    space = int(((70 / len(s))-1)*len(s))
+    print(' '*space + s)
+right_justify('monty')
+
+#Exercise3.25:
+
+
+def print_twice(bruce):
+    print(bruce)
+    print(bruce)
+
+
+def do_four():
+    print_twice('spam')
+    print_twice('spam')
+
+do_four()
+
+
+def plus():
+    print('+', '- ' * 4 + '+', '- ' * 4 + '+')
+    
+    
+def minus():
+    print('|', ' ' * 7, '|', ' ' * 7, '|')
+plus()
+minus()
+minus()
+minus()
+minus()
+plus()
+minus()
+minus()
+minus()
+minus()
+plus()
+
+#Exerise 3.32:
+
+
+def plus_():
+    print('+', '- ' * 4+'+', '- ' * 4+'+', '- ' * 4+'+', '- ' * 4+'+')
+    
+    
+def minus_():
+    print('|', ' '*7, '|', ' '*7, '|', ' '*7, '|', ' '*7, '|')
+plus_()
+minus_()
+minus_()
+minus_()
+minus_()
+plus_()
+minus_()
+minus_()
+minus_()
+minus_()
+plus_()
+minus_()
+minus_()
+minus_()
+minus_()
+plus_()
+minus_()
+minus_()
+minus_()
+minus_()
+plus_()
