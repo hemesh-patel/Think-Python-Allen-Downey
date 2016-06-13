@@ -1,0 +1,43 @@
+#Exercise 5.1
+
+
+import time
+
+time = time.time()
+sec = time % 60
+min = time // 60
+hour = min // 60
+day = hour // 24
+print(day, ',', hour, ':', min, ':', sec)
+
+#Exercise 5.2
+
+
+def check_fermat():
+    a = int(input('Enter value of a:\n'))
+    b = int(input('Enter value of b:\n'))
+    c = int(input('Enter value of c:\n'))
+    n = int(input('Enter value of n:\n'))
+    if n < 2 or a <= 0 or b <= 0 or c <= 0:
+        print('incorrect value of n')
+    if (a**n) + (b**n) == (c**n):
+        print('Holy smokes, Fermat was wrong!"')
+    else:
+        print('No, that does not work')
+
+check_fermat()
+
+#Exercise 5.3
+
+
+def is_triangle():
+    a = int(input('Enter value of a:\n'))
+    b = int(input('Enter value of b:\n'))
+    c = int(input('Enter value of c:\n'))
+    if a > b + c or b > a + c or c < + b:
+        print('No')
+    else:
+        print('Yes')
+
+is_triangle()
+
