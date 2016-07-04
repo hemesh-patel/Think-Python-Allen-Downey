@@ -1,0 +1,59 @@
+#Exercise 7.1:
+
+import math
+
+
+def mysqrt (a, x):
+    while True:
+        y = (x + a/x) / 2
+        if y == x:
+            break
+        x = y
+    return x
+
+def test_square_root():
+    print('a ', '  mysqrt(a)', '     math.sqrt(a)', '  diff')
+    print('- ', '  ---------', '     ------------', '  ----')
+    print('1.0', '', mysqrt(1, 1), '            ', math.sqrt(1), '          ', abs(mysqrt(1,1)- math.sqrt(1)))
+    print('2.0', '', ('%.11f' % (mysqrt(2, 2))), '', ('%.11f' % (math.sqrt(2))), '', abs(mysqrt(2, 2) - math.sqrt(2)))
+    print('3.0', '', ('%.11f' % (mysqrt(3, 1.5))), '', ('%.11f' % (math.sqrt(3))), '', abs(mysqrt(3, 1.5) - math.sqrt(3)))
+    print('4.0', '', ('%.11f' % (mysqrt(4, 2))), '', ('%.11f' % (math.sqrt(4))), '', abs(mysqrt(4, 2) - math.sqrt(4)))
+    print('5.0', '', ('%.11f' % (mysqrt(5, 2.2))), '', ('%.11f' % (math.sqrt(5))), '', abs(mysqrt(5, 2.2) - math.sqrt(5)))
+    print('6.0', '', ('%.11f' % (mysqrt(6, 2.5))), '', ('%.11f' % (math.sqrt(6))), '', abs(mysqrt(6, 2.5) - math.sqrt(6)))
+    print('7.0', '', ('%.11f' % (mysqrt(7, 2.6))), '', ('%.11f' % (math.sqrt(7))), '', abs(mysqrt(7, 2.6) - math.sqrt(7)))
+    print('8.0', '', ('%.11f' % (mysqrt(8, 2.8))), '', ('%.11f' % (math.sqrt(8))), '', abs(mysqrt(8, 2.8) - math.sqrt(8)))
+    print('9.0', '', ('%.11f' % (mysqrt(9, 3))), '', ('%.11f' % (math.sqrt(9))), '', abs(mysqrt(9, 3) - math.sqrt(9)))
+
+test_square_root()
+
+#Exercise 7.2:
+
+def eval_loop():
+    lst = []
+    while True:
+        user = input('>')
+        if user == 'done':
+            break
+        print(eval(user))
+        lst.append(eval(user))
+    try: print(lst[-1])
+    except: print('')
+
+eval_loop()
+
+#Exercise 7.3:
+import math
+
+def estimate_pi ():
+    lst= []
+    k = 0
+    while True:
+        summation = (math.factorial(4*k) * (1103 + (26390*k))) / ((math.factorial(k)**4) * (396**(4*k)))
+        k += 1
+        lst.append(summation)
+        if summation < 1e-15:
+            break
+    sri = (2*math.sqrt(2)/9801) * sum(lst)
+    print((sri)**-1)
+
+estimate_pi()
