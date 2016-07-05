@@ -1,0 +1,24 @@
+#Exercise 8.2:
+
+word = 'banana'
+print(word.count('a'))
+
+
+#Exercise 8.3:
+
+def is_palindrome(s):
+    if s == s[::-1]:
+        print('%s is palindrome' % s)
+
+is_palindrome('noon')
+
+
+#Exercise 8.5
+
+def rotate_word(s, n):
+    lst = []
+    for i in s:
+        lst.append(chr(ord(i) + int(n)))
+    print(''.join(lst))
+
+rotate_word('list', 1)
