@@ -1,0 +1,109 @@
+#Exercise 9.1:
+
+fhand = open('words.txt')
+for line in fhand:
+    line = line.strip()
+    if len(line) > 20:
+        print(line)
+
+
+#Exercise 9.2:
+
+def has_no_e(s):
+    if 'e' in [i for i in s]:
+        return False
+    else:
+        return True
+print(has_no_e('hfgjndfg'))
+
+
+#Exercise 9.3:
+
+def avoids(w, s):
+    for i in w:
+        if i in [x for x in s]:
+            return False
+        else:
+            return True
+print(avoids('hello', 'gggdh'))
+
+
+#Exercise 9.4:
+
+def uses_only(w, s):
+    lst = []
+    for i in w:
+        if i not in [x for x in s]:
+            lst.append('False')
+        else:
+            lst.append('True')
+    for x in lst:
+        if x == 'False':
+            return False
+    else:
+        return True
+print(uses_only('hello', 'helo'))
+
+
+#Exercise 9.5:
+
+def uses_all(w, s):
+    lst = [x for x in s]
+    for i in w:
+        if i in [x for x in s]:
+            try:
+                lst.remove(i)
+            except:
+                return False
+    if len(lst) != 0:
+        return False
+    else:
+        return True
+print(uses_all('hello', 'lhoe'))
+
+
+#Exercise 9.6:
+
+def is_abecedarian (s):
+    s = s.lower()
+    lst = [x for x in s]
+    i = 0
+    while True:
+        if ord(lst[i]) <= ord(lst[i+1]):
+            return True
+        else:
+            return False
+    i += 1
+
+print(is_abecedarian('abc'))
+
+#Exercise 9.7:
+
+
+def three(word):
+    s = word.lower()
+    lst = [x for x in s]
+    i = 0
+    while True:
+        try:
+            if ord(lst[i]) == ord(lst[i+1]) == ord(lst[i+2]):
+                return True
+            else:
+                return False
+        except:
+            return False
+print(three('aaa'))
+
+
+#Exercise 9.8:
+
+digit = [x for x in range(100000, 1000000)]
+for i in digit:
+    last_four = str(i)[2:]
+    five = str(i + 1)[1:]
+    four = str(i + 2)[1:5]
+    six = str(i + 3)
+    if last_four == last_four[::-1] and five == five[::-1] and four == four[::-1] and six == six[::-1]:
+        print(i)
+
+#Exercise 9.9
